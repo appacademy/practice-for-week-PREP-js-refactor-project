@@ -10,6 +10,8 @@ the new descriptions. Modify the given functions and make sure the names of the
 functions match either the name indicated in the `New` instructions and/or the
 `module.exports` so that your tests run properly.
 
+Download the starter [here][starter].
+
 This exercise is meant to simulate a real-world software engineering duty where
 you may be introduced to an old codebase and be asked to make updates. You
 will be practicing the important skills of reading and understanding code!
@@ -28,3 +30,5 @@ npm run test
 ```
 
 If your tests aren't running, make sure Mocha is installed globally.
+
+[starter]: https://github.com/appacademy/practice-for-week-PREP-js-refactor-project
