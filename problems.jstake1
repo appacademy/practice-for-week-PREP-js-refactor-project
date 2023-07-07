@@ -2,21 +2,39 @@
     Original:
     Write a function `plusFive` that takes in a number as an argument and
     returns the sum of that number and 5.
+    function plusFive(number) {
+  return number + 5;
+}
+let result = plusFive(10);
+console.log(result); // Output: 15
 
     New:
     Write a function `plusTen` that takes in a number as an argument and
     returns the sum of that number and 10.
+    function plusTen(number) {
+  return number + 10;
+}let result = plusTen(7);
+console.log(result); // Output: 17
 */
 function plusFive(num) {
     return num + 5;
 }
-
+let result = plusFive(10);
+console.log(result); // Output: 15
 
 /*
     Original:
     Write a function `printFives(max)` that prints out the multiples of 5 that 
     are less than max.
-
+    function printFives(max) {
+  for (let i = 5; i < max; i += 5) {
+    console.log(i);
+  }
+}
+printFives(20);
+5
+10
+15
     New:
     Write a function `returnSevens(max)` that returns an array that contains
     multiples of 7 that are less than max.
@@ -28,7 +46,11 @@ function printFives(max) {
         }
     }
 }
-
+printFives(20);
+0
+5
+10
+15
 
 /*
     Original:
@@ -36,6 +58,8 @@ function printFives(max) {
     accepts a sentence and two words as arguments. The `eitherStringIncluded`
     function should return `true` if *either* `word1` or `word2` is found in
     the sentence, and `false` if neither is found. 
+
+    
 
     New:
     Write a function named `bothStringsIncluded(sentence, word1, word2)` that
@@ -46,12 +70,23 @@ function printFives(max) {
 function eitherStringIncluded(sentence, word1, word2) {
     return sentence.includes(word1) || sentence.includes(word2);
 }
+let result1 = eitherStringIncluded("The quick brown fox", "quick", "lazy");
+console.log(result1); // Output: true
 
+let result2 = eitherStringIncluded("The quick brown fox", "lazy", "jumps");
+console.log(result2); // Output: false
 
 /*
     Original:
     Write a function `sumArray(arr)` that takes in an array of numbers and
     returns the total sum of all the numbers.
+    function sumArray(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
 
     New:
     Write a function `productArray(arr)` that takes in an array of numbers and
@@ -79,7 +114,12 @@ function sumArray(arr) {
 function threeOrSeven(num) {
     return num % 3 === 0 || num % 7 === 0;
 }
-
+function threeOrSeven(number) {
+  return number % 3 === 0 || number % 7 === 0;
+}
+console.log(threeOrSeven(9));  // Output: true (divisible by 3)
+console.log(threeOrSeven(14)); // Output: true (divisible by 7)
+console.log(threeOrSeven(10)); // Output: false (not divisible by 3 or 7)
 
 /*
     Original:
@@ -100,7 +140,9 @@ function countVowels(word) {
     }
     return count;
 }
-
+console.log(countVowels("hello")); // Output: 2
+console.log(countVowels("world")); // Output: 1
+console.log(countVowels("javascript")); // Output: 3
 
 /*
     Original:
@@ -108,11 +150,38 @@ function countVowels(word) {
     version of that string. Use the `.toLowerCase()` function on a string to
     see what it does!
 
+    function whisper(str) {
+  return str.toLowerCase();
+  console.log(whisper("Hello, World!")); // Output: "hello, world!"
+console.log(whisper("I LOVE JavaScript")); // Output: "i love javascript"
+console.log(whisper("OpenAI is Amazing")); // Output: "openai is amazing"
+
     New:
     Write a function `alternatingLetters` that takes in a string and returns a
     version of that string where letters alternate uppercase and lowercase,
     starting with lowercase. Do not make exceptions for spaces within the
     string.
+    function alternatingLetters(str) {
+  let result = "";
+  let lowercase = true;
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === " ") {
+      result += " ";
+    } else {
+      if (lowercase) {
+        result += str[i].toLowerCase();
+      } else {
+        result += str[i].toUpperCase();
+      }
+      lowercase = !lowercase;
+    }
+  }
+
+  return result;
+  console.log(alternatingLetters("Hello, World!")); // Output: "hElLo, wOrLd!"
+console.log(alternatingLetters("I LOVE JavaScript")); // Output: "i lOvE jAvAsCrIpT"
+console.log(alternatingLetters("OpenAI is Amazing")); // Output: "oPeNaI iS aMaZiNg"
 
     Strings are immutable, so here are some tools you may find useful. The
     `.split('')` function on strings to make a copy of the string as an array. 
